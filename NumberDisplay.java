@@ -29,5 +29,23 @@ public class NumberDisplay
     public void setValue(int newTime)
     {
         value = newTime;
-    }    
-}     
+    } 
+    /**
+     * Metodo que devuelve el valor actual del display 
+     * en forma de cadena de 2 caracteres
+     */
+    public String getDisplayValue()
+    {
+        String displayValue;
+        if(value<10)
+        {
+            displayValue = "0" + value;
+        }
+        else
+        {
+            displayValue = "" + value;
+        }    
+        return displayValue;
+    }   
+}   
+  
