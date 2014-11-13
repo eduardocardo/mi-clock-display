@@ -46,6 +46,14 @@ public class NumberDisplay
             displayValue = "" + value;
         }    
         return displayValue;
-    }   
+    }
+    /**
+     * Metodo que devuelve el valor actual del display
+     * como entero
+     */
+    public int getValue()
+    {
+        return value;
+    }    
 }   
   
