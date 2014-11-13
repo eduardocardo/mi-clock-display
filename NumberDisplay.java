@@ -17,17 +17,17 @@ public class NumberDisplay
      */
     public NumberDisplay(int max)
     {
-        // initialise instance variables
+        
         value = 0;
         limit = max;
        
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Metodo para fijar el valor actual del display
      */
-    
-}
+    public void setValue(int newTime)
+    {
+        value = newTime;
+    }    
+}     
