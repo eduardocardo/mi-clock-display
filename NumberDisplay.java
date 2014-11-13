@@ -54,6 +54,19 @@ public class NumberDisplay
     public int getValue()
     {
         return value;
+    }
+    /**
+     * Metodo que incrementa en 1 el display
+     * y lo hace volver al principio si alcance el limite
+     */
+    public void increment()
+    {
+        value = value +1;
+        //si alcanza el limite lo hace volver al principio
+        if(value == limit)
+        {
+            value = 0;
+        }
     }    
 }   
   
