@@ -29,7 +29,7 @@ public class ClockDisplay
 
     /**
      * Constructor para la clase ClockDisplay
-     * 
+     * con parametros int
      */
     public ClockDisplay(int newHour, int newMinutes)
     {
@@ -40,5 +40,18 @@ public class ClockDisplay
       newTime = (hour.getDisplayValue())+":"+(minutes.getDisplayValue());
     }
     
-    
+    /**
+     * Metodo que fije el tiempo actual del reloj
+     */
+    public void setTime(int newHour,int newMinutes)
+    {
+    }
+    /**
+     * Metodo que devuelve la hora como una cadena de 5 caracteres
+     */
+    public String getTime()
+    {
+        newTime = (hour.getDisplayValue())+":"+(minutes.getDisplayValue());
+        return newTime;
+    }   
 }
