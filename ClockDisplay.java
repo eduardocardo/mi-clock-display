@@ -55,5 +55,12 @@ public class ClockDisplay
     {
         newTime = (hour.getDisplayValue())+":"+(minutes.getDisplayValue());
         return newTime;
-    }   
+    }
+    /**
+     * Avanza la hora actual 1 minuto
+     */
+    public void timeTick()
+    {
+        minutes.increment();
+    }    
 }
