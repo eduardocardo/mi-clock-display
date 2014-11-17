@@ -45,6 +45,8 @@ public class ClockDisplay
      */
     public void setTime(int newHour,int newMinutes)
     {
+        hour.setValue(newHour);
+        minutes.setValue(newMinutes);
     }
     /**
      * Metodo que devuelve la hora como una cadena de 5 caracteres
