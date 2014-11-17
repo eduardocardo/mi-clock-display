@@ -7,28 +7,31 @@
  */
 public class NumberDisplay
 {
-    //valor de las horas/minutos
+    //valor almacenado
     private int value;
-    //limite de las horas minutos
+    //limite al que puede llegar el valor
     private int limit;
 
     /**
      * Constructor for objects of class NumberDisplay
      */
-    public NumberDisplay(int max)
+    public NumberDisplay(int newLimit)
     {
         
         value = 0;
-        limit = max;
+        limit = newLimit;
        
     }
 
     /**
      * Metodo para fijar el valor actual del display
      */
-    public void setValue(int newTime)
+    public void setValue(int newValue)
     {
-        value = newTime;
+        if(newValue<limit && newValue>=0)
+        {
+            value = newValue;
+        }
     } 
     /**
      * Metodo que devuelve el valor actual del display 
