@@ -7,11 +7,11 @@
  */
 public class ClockDisplay
 {
-    // indica el valor de la hora
+    // objeto NumberDisplay que guarda la hora
     private NumberDisplay hour;
-    //indica el valor de los minutos
+    //objeto NumberDisplay que guarda los minutos
     private NumberDisplay minutes;
-    //indica la hora con cadena de 5 caracteres
+    //un String de 5 caracteres
     private String newTime;
 
     /**
@@ -23,13 +23,13 @@ public class ClockDisplay
         
         hour= new NumberDisplay(24);
         minutes=new NumberDisplay(60);
-        newTime = "0"+ ":"+"0";
+        updateDisplay();
        
     }
 
     /**
-     * Constructor para la clase ClockDisplay
-     * con parametros int
+     * Constructor que crea un reloj con las horas y minutos 
+     * 
      */
     public ClockDisplay(int newHour, int newMinutes)
     {
@@ -37,7 +37,7 @@ public class ClockDisplay
       hour.setValue(newHour);
       minutes = new NumberDisplay(60);
       minutes.setValue(newMinutes);
-      newTime = (hour.getDisplayValue())+":"+(minutes.getDisplayValue());
+      updateDisplay();
     }
     
     /**
@@ -45,16 +45,16 @@ public class ClockDisplay
      */
     public void setTime(int newHour,int newMinutes)
     {
-        hour.setValue(newHour);
+        hour.setValue(newHour);    
         minutes.setValue(newMinutes);
+        updateDisplay();
     }
     /**
      * Metodo que devuelve la hora como una cadena de 5 caracteres
      */
     public String getTime()
-    {
-        newTime = (hour.getDisplayValue())+":"+(minutes.getDisplayValue());
-        return newTime;
+    {                       
+         return newTime;
     }
     /**
      * Avanza la hora actual 1 minuto
@@ -62,5 +62,34 @@ public class ClockDisplay
     public void timeTick()
     {
         minutes.increment();
+        if(minutes.getValue()== 0)
+        {
+            hour.increment();
+        }    
+       updateDisplay();
+    }  
+    /**
+     * Actualiza el atributo newTime y da formato de 12 horas al reloj
+     */
+    private void updateDisplay()
+    {
+        newTime = (hour.getDisplayValue())+":"+(minutes.getDisplayValue());
+        if(hour.getValue() >11)
+        {
+           int format;
+           format = hour.getValue() - 12;
+            if(format>10)
+           {
+                newTime= format + ":" + minutes.getDisplayValue()+ " PM";
+           }   
+           else
+           {
+               newTime = "0" + format + ":" + minutes.getDisplayValue()+ " PM";
+           }
+        }   
+        else
+        {
+            newTime =hour.getDisplayValue()+":"+ minutes.getDisplayValue()+ " AM";
+        }
     }    
 }
