@@ -23,8 +23,8 @@ public class ClockDisplay
     String newDate;
 
     /**
-     * Constructor for objects of class ClockDisplay
-     * con atributos inicializados a 0
+     * Constructor que crea un reloj con las horas,minutos,dias,meses y años
+     * inicializados a 0
      */
     public ClockDisplay()
     {
@@ -39,7 +39,7 @@ public class ClockDisplay
     }
 
     /**
-     * Constructor que crea un reloj con las horas y minutos 
+     * Constructor que crea un reloj con las horas,minutos,dias,meses y años 
      * 
      */
     public ClockDisplay(int newHour, int newMinutes,int newDay,int newMonth,int newYear)
@@ -58,7 +58,7 @@ public class ClockDisplay
     }
     
     /**
-     * Metodo que fije el tiempo actual del reloj
+     * Metodo que fije el tiempo y fecha actual del reloj
      */
     public void setTime(int newHour,int newMinutes,int newDay,int newMonth,int newYear)
     {
@@ -70,7 +70,7 @@ public class ClockDisplay
         updateDisplay();
     }
     /**
-     * Metodo que devuelve la hora como una cadena de 5 caracteres
+     * Metodo que devuelve la hora y fecha como una cadena de 16 caracteres
      */
     public String getTime()
     {                       
@@ -103,7 +103,7 @@ public class ClockDisplay
        updateDisplay();
     }  
     /**
-     * Actualiza el atributo newTime y da formato de 12 horas al reloj
+     * Actualiza el atributo newTime y newDate y da formato de 12 horas al reloj
      */
     private void updateDisplay()
     {
@@ -138,4 +138,4 @@ public class ClockDisplay
         }
         newDate = day.getDisplayValue() + "/" + month.getDisplayValue() + "/" + year.getDisplayValue();
     }
-    }
+}
